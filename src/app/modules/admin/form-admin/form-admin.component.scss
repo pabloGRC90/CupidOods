@@ -1,0 +1,40 @@
+.btn{
+  margin-left: 10px;
+}
+.col-bootstrap{
+  cursor: pointer;
+}
+.col-bootstrap p{
+  font-size: 20px;
+}
+.col-bootstrap .btn{
+  font-size: 20px;
+  margin-top: 68px;
+}
+.table-responsive{
+  margin-top: 50px;
+}
+td p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.p-false{
+  color:#ff5252;
+  font-size: 14px !important;
+  padding-top: 4px;
+  font-weight: bold;
+}
+.p-true{
+  color:#68b368;
+  font-size: 14px !important;
+  padding-top: 4px;
+  font-weight: bold;
+}
+.card-img{
+  max-width: 50px;
+  border-radius: 50px;
+  transition: 0.2s;
+}
+tr:hover .card-img{
+  filter:drop-shadow(0px 0px 10px #78ff9f);
+}

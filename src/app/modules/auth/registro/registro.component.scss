@@ -1,0 +1,26 @@
+
+.btn-enviar{
+  margin-right: 15px;
+}
+.container-error{
+  padding: 0.25rem;
+}
+.inline-error{
+  display: inline;
+  color:#ee2d2d;
+}
+.abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88vh;
+}
+.form {
+  padding: 20px;
+  width: 450px;
+  background-color: #e2e2e2;
+  border-radius: 10px;
+}
+.form-title{
+  font-size: 20px;
+}

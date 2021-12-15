@@ -1,0 +1,47 @@
+
+<div *ngIf="users.length>0" class="table-responsive">
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Género</th>
+        <th scope="col">Conexión</th>
+        <th scope="col">Active</th>
+        <th scope="col">AdminRol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; index as i" (click)="mostrar(user)">
+        <td class="col-bootstrap" >
+          <img class="card-img img-fluid" src="../../../../assets/fakeData/img/{{ user.photo }}" alt="Profile photo"/>
+        </td>
+        <td class="col-bootstrap" >
+          <p>{{ user.id }}</p>
+        </td>
+        <td class="col-bootstrap" >
+          <p>{{ user.username }}</p>
+        </td>
+        <td class="col-bootstrap" >
+          <p>{{ user.email }}</p>
+        </td>
+        <td class="col-bootstrap" >
+          <p>{{ user.gender }}</p>
+        </td>
+        <td class="col-bootstrap" >
+          <div *ngIf="user.conected"><p class="p-true">online</p></div>
+          <div *ngIf="!user.conected"><p class="p-false">offline</p></div>
+        </td>
+        <td class="col-bootstrap" >
+          <div *ngIf="user.active"><p class="p-true">activo</p></div>
+          <div *ngIf="!user.active"><p class="p-false">inactivo</p></div>
+        </td>
+        <td class="col-bootstrap" >
+          <div *ngIf="user.admin"><p class="p-true">admin</p></div>
+          <div *ngIf="!user.admin"><p class="p-false">user</p></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

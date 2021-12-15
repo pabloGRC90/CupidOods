@@ -1,0 +1,20 @@
+[
+  {
+    "id": 31,
+    "email": "mkochu@gmail.com",
+    "password": "6m0Rgjq6Qg",
+    "username": "Mario",
+    "provincia": "Barcelona",
+    "years": 35,
+    "typeRel": "serious",
+    "sport": 85,
+    "art": 30,
+    "politic": 75,
+    "wantSons": "si",
+    "haveSons": "0",
+    "gender": "male",
+    "genderPref": "female",
+    "photo": "photo-1534644586429-7681a71bc591.jfif",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nam labore eius tenetur aliquam quasi? Repudiandae unde sed omnis aliquid hic, quibusdam mollitia nulla, ipsam molestiae ipsa, natus ratione laborum!"
+   }
+]

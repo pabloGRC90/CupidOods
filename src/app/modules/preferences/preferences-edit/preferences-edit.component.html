@@ -1,0 +1,214 @@
+<div class="container-form">
+
+  <div class="abs-center">
+
+    <form [formGroup]="changePreferenciasUsuario" (ngSubmit)="onSubmit()" class="form">
+
+      <h1 class="form-title p-3">Cambiar Preferencias</h1>
+
+      <div *ngFor="let preference of preferences; index as i" (click)="mostrar(preference)">
+
+        <div class="form-group p-3">
+          <label for="username">Nombre</label>
+          <input class="form-control" type="text" formControlName="username" minlength="3" maxlength="20" placeholder="{{preference.username}}" default="Mario"/>
+          <div *ngIf="submitted && formulario['username'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['username'].errors['required']">Debe indicar un nombre</div>
+              <div class="inline-error" *ngIf="formulario['username'].errors['minlength']">Mínimo 3 caracteres</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group p-3">
+          <label for="tipoRelacion">Provincia</label>
+          <select class="custom-select custom-select-lg form-control" formControlName="provincia" required>
+            <option selected value="">{{preference.provincia}}</option>
+            <option value="Álava/Araba">Álava</option>
+            <option value="Albacete">Albacete</option>
+            <option value="Alicante">Alicante</option>
+            <option value="Almería">Almería</option>
+            <option value="Asturias">Asturias</option>
+            <option value="Ávila">Ávila</option>
+            <option value="Badajoz">Badajoz</option>
+            <option value="Baleares">Baleares</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Burgos">Burgos</option>
+            <option value="Cáceres">Cáceres</option>
+            <option value="Cádiz">Cádiz</option>
+            <option value="Cantabria">Cantabria</option>
+            <option value="Castellón">Castellón</option>
+            <option value="Ceuta">Ceuta</option>
+            <option value="Ciudad Real">Ciudad Real</option>
+            <option value="Córdoba">Córdoba</option>
+            <option value="Cuenca">Cuenca</option>
+            <option value="Gerona/Girona">Gerona</option>
+            <option value="Granada">Granada</option>
+            <option value="Guadalajara">Guadalajara</option>
+            <option value="Guipúzcoa/Gipuzkoa">Guipúzcoa</option>
+            <option value="Huelva">Huelva</option>
+            <option value="Huesca">Huesca</option>
+            <option value="Jaén">Jaén</option>
+            <option value="La Coruña/A Coruña">La Coruña</option>
+            <option value="La Rioja">La Rioja</option>
+            <option value="Las Palmas">Las Palmas</option>
+            <option value="León">León</option>
+            <option value="Lérida/Lleida">Lérida</option>
+            <option value="Lugo">Lugo</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Málaga">Málaga</option>
+            <option value="Melilla">Melilla</option>
+            <option value="Murcia">Murcia</option>
+            <option value="Navarra">Navarra</option>
+            <option value="Orense/Ourense">Orense</option>
+            <option value="Palencia">Palencia</option>
+            <option value="Pontevedra">Pontevedra</option>
+            <option value="Salamanca">Salamanca</option>
+            <option value="Segovia">Segovia</option>
+            <option value="Sevilla">Sevilla</option>
+            <option value="Soria">Soria</option>
+            <option value="Tarragona">Tarragona</option>
+            <option value="Tenerife">Tenerife</option>
+            <option value="Teruel">Teruel</option>
+            <option value="Toledo">Toledo</option>
+            <option value="Valencia">Valencia</option>
+            <option value="Valladolid">Valladolid</option>
+            <option value="Vizcaya/Bizkaia">Vizcaya</option>
+            <option value="Zamora">Zamora</option>
+            <option value="Zaragoza">Zaragoza</option>
+          </select>
+
+          <div *ngIf="submitted && formulario['provincia'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['provincia'].errors['required']">Tiene que indicar su provincia</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group p-3">
+          <label for="tipoRelacion">Tipo de relación </label>
+          <select class="custom-select custom-select-lg form-control" formControlName="tipoRelacion" required>
+            <option selected value="" disabled>{{preference.typeRel}}</option>
+            <option value="sporadic" selected>sporadic</option>
+            <option value="serious">serious</option>
+          </select>
+          <div *ngIf="submitted && formulario['tipoRelacion'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['tipoRelacion'].errors['required']">Tiene que indicar si quiere tener hijos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group p-3">
+          <p>Deporte: <output id="num1">{{preference.sport}}</output></p>
+          <input type="range" class="range-control" value="{{preference.sport}}" max="100" oninput="num1.value = this.value" oninput="num.value = this.value">
+          <!-- <input type="range" class="range-control" formControlName="sport" value="{{preference.sport}}" max="100" oninput="num.value = this.value"> -->
+          <p>Arte: <output id="num2">{{preference.art}}</output></p>
+          <input type="range" class="range-control" value="{{preference.art}}" max="100" oninput="num2.value = this.value" oninput="num.value = this.value">
+          <!-- <input type="range" class="range-control" formControlName="art"  value="{{preference.art}}" max="100" oninput="num.value = this.value"> -->
+          <p>Política: <output id="num3">{{preference.politic}}</output></p>
+          <input type="range" class="range-control" value="{{preference.politic}}" max="100" oninput="num3.value = this.value" oninput="num.value = this.value">
+          <!-- <input type="range" class="range-control" formControlName="politic" value="{{preference.politic}}" max="100" oninput="num.value = this.value"> -->
+        </div>
+
+        <div class="form-group p-3">
+          <label for="wantSons">Quiere hijos</label>
+          <select class="custom-select custom-select-lg form-control" formControlName="wantSons" required>
+            <option selected value="" disabled>{{preference.wantSons}}</option>
+            <option value="yes">si</option>
+            <option value="no">no</option>
+            <option value="undefined">no lo se</option>
+          </select>
+          <div *ngIf="submitted && formulario['wantSons'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['wantSons'].errors['required']">Tiene que indicar si quiere tener hijos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group p-3">
+          <label for="haveSons">¿Tiene hijos?</label>
+          <select class="custom-select custom-select-lg form-control" formControlName="haveSons" required>
+            <option selected value="" disabled>{{preference.haveSons}}</option>
+            <option value="0" selected>0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="more">más</option>
+          </select>
+          <div *ngIf="submitted && formulario['haveSons'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['haveSons'].errors['required']">Tiene que indicar el número de hijos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group p-3">
+          <label for="gender">Género</label>
+          <select class="custom-select custom-select-lg form-control" formControlName="gender" required>
+            <option selected value="" disabled>{{preference.gender}}</option>
+            <option value="female">mujer</option>
+            <option value="male">hombre</option>
+            <option value="undefined" selected>otros</option>
+          </select>
+          <div *ngIf="submitted && formulario['gender'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['gender'].errors['required']">Tiene que indicar su género</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group p-3">
+          <label for="preferencia">Qué buscas</label>
+          <select class="custom-select custom-select-lg form-control" formControlName="preferencia" required>
+            <option selected value="" disabled>{{preference.genderPref}}</option>
+            <option value="female">mujeres</option>
+            <option value="male">hombres</option>
+            <option value="undefined" selected>Ambos</option>
+          </select>
+          <div *ngIf="submitted && formulario['preferencia'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['preferencia'].errors['required']">Tiene que indicar lo que está buscando</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group p-3">
+          <img src="../../../../assets/fakeData/img/{{preference.photo}}" alt="Foto Perfil" class="form-photo">
+          <input class="form-control input-photo" type="file" formControlName="photo"/>
+          <div *ngIf="submitted && formulario['photo'].errors">
+            <!-- <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['photo'].errors['required']">Debe subir una foto para su perfil</div>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="form-group p-3">
+          <span>Descripción Actual</span><br />
+          <p class="p-description">{{preference.description}}</p>
+          <label for="description" form-control="description">Nueva Descripción</label>
+          <textarea rows="5" cols="" formControlName="description" class="form-control textarea" minlength="25">Hola</textarea>
+          <div *ngIf="submitted && formulario['description'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['description'].errors['required']">El campo no puede estar vacío</div>
+              <div class="inline-error" *ngIf="formulario['description'].errors['minlength']">Mínimo 10 caracteres</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3">
+          <input class="btn btn-success btn-enviar" type="submit" value="Enviar" />
+          <input class="btn btn-warning btn-reset" type="reset" value="Cancelar" (click)="onReset()"/>
+          <input class="btn btn-warning btn-reset" type="reset" value="Cambiar contraseña" (click)="changePass()"/>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+

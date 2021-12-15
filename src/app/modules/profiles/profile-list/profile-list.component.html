@@ -1,0 +1,35 @@
+<div *ngIf="profiles.length>0" class="table-responsive">
+
+  <table class="table table-hover">
+    <tbody>
+      <tr *ngFor="let profile of profiles; index as i" (click)="mostrar(profile)">
+
+        <td class="col-bootstrap" >
+          <img class="profile-photo" src="../../../../assets/fakeData/img/{{profile.photo}}" alt="img">
+        </td>
+
+        <td class="col-bootstrap" >
+          <p>{{ profile.username }}</p>
+        </td>
+
+        <td class="col-bootstrap" >
+          <p>{{ profile.years }} años</p>
+        </td>
+
+        <td class="col-bootstrap" >
+          <p>{{ profile.provincia }}</p>
+        </td>
+
+        <td class="col-bootstrap" >
+          <p>{{ profile.typeRel }}</p>
+        </td>
+
+        <td class="col-bootstrap" >
+          <button class="btn btn-success">Ver Perfil</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>

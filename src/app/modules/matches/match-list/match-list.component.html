@@ -1,0 +1,38 @@
+<div *ngIf="matches.length>0" class="table-responsive">
+  <table class="table table-hover">
+    <tbody>
+      <tr *ngFor="let match of matches; index as i" (click)="mostrar(match)">
+
+        <td class="col-bootstrap" >
+          <img class="match-photo" src="../../../../assets/fakeData/img/{{match.photo}}" alt="img">
+        </td>
+
+        <td class="col-bootstrap" >
+          <div *ngIf="match.conected"><div class="btn-true"></div></div>
+          <div *ngIf="!match.conected"><div class="btn-false"></div></div>
+        </td>
+
+        <td class="col-bootstrap nombre" >
+          <p>{{ match.username }}</p>
+        </td>
+
+        <td class="col-bootstrap" >
+          <p>{{ match.years }} años</p>
+        </td>
+
+        <td class="col-bootstrap" >
+          <p>{{ match.provincia }}</p>
+        </td>
+
+        <td class="col-bootstrap" >
+          <p>{{ match.typeRel }}</p>
+        </td>
+
+        <td class="col-bootstrap" >
+          <button class="btn btn-success">Ver Perfil</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

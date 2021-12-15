@@ -1,0 +1,51 @@
+<div *ngIf="profile != undefined" class="card">
+
+  <div class="modal-header">
+    <h4 class="modal-title">{{ profile.username }}</h4>
+    <button class="close" aria-label="close" type="button" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <img class="card-img-top img-fluid" src="../../../../assets/fakeData/img/{{ profile.photo }}" alt="Profile photo"/>
+
+    <h6>Edad: {{ profile.years }}</h6>
+    <hr />
+
+    <h6>Provincia: {{ profile.provincia }}</h6>
+    <hr />
+
+    <h6>Tipo de relación: {{ profile.typeRel }}</h6>
+    <hr />
+
+    <h6>Deporte</h6>
+    <meter max="100" value="{{ profile.sport }}"></meter>
+    <h6>Arte</h6>
+    <meter max="100" value="{{ profile.art }}"></meter>
+    <h6>Política</h6>
+    <meter max="100" value="{{ profile.politic }}"></meter>
+    <hr />
+
+    <h6>Hijos: {{ profile.haveSons }}</h6>
+    <hr />
+
+    <h6>Quiere hijos: {{ profile.wantSons }}</h6>
+    <hr />
+
+    <h6>Conexión: {{ profile.conected }}</h6>
+    <hr />
+
+    <h6>Descripción</h6>
+    <p>{{ profile.description }}</p>
+
+    <div class="modal-footer">
+      <button type="button" ngbAutofocus class="btn btn-success" (click)="closeModal()">OK</button>
+      <button type="button" class="btn btn-success" (click)="sendMessage()">Mensaje</button>
+      <button type="button" class="btn btn-success"(click)="like()">Like</button>
+      <button type="button" class="btn btn-danger"(click)="dislike()">Dislike</button>
+      <button type="button" class="btn btn-danger"(click)="blockUser()">Bloquear</button>
+    </div>
+
+  </div>
+</div>

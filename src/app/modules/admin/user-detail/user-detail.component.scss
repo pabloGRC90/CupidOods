@@ -1,0 +1,36 @@
+meter{
+  width: 100%;
+}
+.card-img-top{
+  margin-bottom: 20px;
+}
+.close{
+  background-color: #494949;
+  color:#ffffff;
+}
+.botones-switch{
+  text-align: center;
+}
+.botones-switch button{
+  margin: 10px 5px;
+  min-width: 220px;
+}
+.btn-false{
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  background-color:#ff5252;
+  position: absolute;
+  top: 6px;
+  left: 88px;
+}
+.btn-true{
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  background-color:#68b368;
+  position: absolute;
+  top: 6px;
+  left: 88px;
+}
+

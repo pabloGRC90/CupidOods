@@ -1,0 +1,51 @@
+<div class="container-form">
+  <div class="abs-center">
+
+    <form [formGroup]="nuevoUsuario" (ngSubmit)="onSubmit()" class="form">
+
+      <h1 class="form-title p-3">Registro Usuario</h1>
+
+      <div class="form-group p-3">
+          <input class="form-control" type="text" formControlName="usuario" placeholder="Usuario"/>
+          <div *ngIf="submitted && formulario['usuario'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['usuario'].errors['required']">El campo no puede estar vacío</div>
+              <div class="inline-error" *ngIf="formulario['usuario'].errors['minlenght']">Debe contener más de 3 caracteres</div>
+            </div>
+          </div>
+      </div>
+
+      <div class="form-group p-3">
+        <input class="form-control"  type="email" formControlName="email" placeholder="Email"/>
+        <div *ngIf="submitted && formulario['email'].errors">
+          <div class="container-error">
+            <div class="inline-error" *ngIf="formulario['email'].errors['required']">El campo no puede estar vacío</div>
+            <div class="inline-error" *ngIf="formulario['email'].errors['email']">Debe ser un email válido</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group p-3">
+          <input class="form-control" type="password" formControlName="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  placeholder="Password"/>
+          <div *ngIf="submitted && formulario['password'].errors">
+            <div class="container-error">
+              <div class="inline-error" *ngIf="formulario['password'].errors['required']">El campo no puede estar vacío</div>
+              <div class="inline-error" *ngIf="formulario['password'].errors['pattern']">Debe tener al menos un dígito, una minúscula, una mayúscula y tener como mínimo 8 caracteres</div>
+            </div>
+          </div>
+      </div>
+
+      <div class="p-3">
+        <input class="btn btn-success btn-enviar" type="submit" value="Enviar" />
+        <input class="btn btn-warning btn-reset" type="reset" value="Cancelar" (click)="onReset()"/>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+
+

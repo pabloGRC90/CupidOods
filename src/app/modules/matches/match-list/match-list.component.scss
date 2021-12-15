@@ -1,0 +1,49 @@
+.btn{
+  margin-left: 10px;
+}
+.col-bootstrap{
+  cursor: pointer;
+}
+.col-bootstrap p{
+  font-size: 20px;
+  margin-top: 75px;
+  text-align: center;
+}
+.col-bootstrap div{
+  font-size: 20px;
+  margin-top: 85px;
+  text-align: center;
+}
+.col-bootstrap .btn{
+  font-size: 20px;
+  margin-top: 68px;
+}
+.table-responsive{
+  margin-top: 50px;
+}
+.match-photo{
+  max-width: 200px;
+  border-radius: 20px 200px 200px 20px;
+  transition:0.6s;
+  filter:opacity(95%);
+}
+tr:hover .match-photo{
+  filter:opacity(100%);
+  border-radius: 200px ;
+}
+.nombre p{
+  text-align: left !important;
+}
+.btn-false{
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  background-color:#ff5252;
+}
+.btn-true{
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  background-color:#68b368;
+
+}

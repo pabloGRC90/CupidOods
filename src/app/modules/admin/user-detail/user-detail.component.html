@@ -1,0 +1,62 @@
+<div *ngIf="user != undefined" class="card">
+
+  <div class="modal-header">
+    <h4 class="modal-title">{{ user.username }}</h4>
+    <button class="close" aria-label="close" type="button" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+
+    <img class="card-img-top img-fluid" src="../../../../assets/fakeData/img/{{ user.photo }}" alt="Profile photo"/>
+
+    <h6>Id: {{ user.id }}</h6>
+    <hr />
+
+    <h6>Email: {{ user.email }}</h6>
+    <hr />
+
+    <h6>Username: {{ user.username }}</h6>
+    <hr />
+
+    <h6>Género: {{ user.gender }}</h6>
+    <hr />
+
+    <div style="position:relative">
+      <div *ngIf="user.conected"><h6>Conexión:</h6><div class="btn-true"></div></div>
+      <div *ngIf="!user.conected"><h6>Conexión:</h6><div class="btn-false"></div></div>
+    </div>
+    <hr />
+
+    <div style="position:relative">
+      <div *ngIf="user.active"><h6>Activo:</h6><div class="btn-true"></div></div>
+      <div *ngIf="!user.active"><h6>Activo:</h6><div class="btn-false"></div></div>
+    </div>
+    <div class="botones-switch">
+      <button type="button" class="btn btn-success"(click)="activaUser()">Activar</button>
+      <button type="button" class="btn btn-danger"(click)="desactivaUser()">Desactivar</button>
+    </div>
+    <hr />
+
+    <div style="position:relative">
+      <div *ngIf="user.admin"><h6>Activo:</h6><div class="btn-true"></div></div>
+      <div *ngIf="!user.admin"><h6>Activo:</h6><div class="btn-false"></div></div>
+    </div>
+    <div class="botones-switch">
+      <button type="button" class="btn btn-success"(click)="addAdminRol()">Activar</button>
+      <button type="button" class="btn btn-danger"(click)="removeAdminRol()">Desactivar</button>
+    </div>
+    <hr />
+
+    <h6>Descripción</h6>
+    <p>{{ user.description }}</p>
+
+    <div class="modal-footer">
+      <button type="button" ngbAutofocus class="btn btn-success" (click)="closeModal()">OK</button>
+      <button type="button" class="btn btn-success" (click)="sendMessage()">Mensaje</button>
+      <button type="button" class="btn btn-danger" (click)="blockUser()">Bloquear</button>
+    </div>
+
+  </div>
+</div>

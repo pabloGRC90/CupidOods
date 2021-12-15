@@ -1,0 +1,49 @@
+<div *ngIf="match != undefined" class="card">
+
+  <div class="modal-header">
+    <h4 class="modal-title">{{ match.username }}</h4>
+    <button class="close" aria-label="close" type="button" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <img class="card-img-top img-fluid" src="../../../../assets/fakeData/img/{{ match.photo }}" alt="Profile photo"/>
+
+    <h6>Edad: {{ match.years }}</h6>
+    <hr />
+
+    <h6>Provincia: {{ match.provincia }}</h6>
+    <hr />
+
+    <h6>Tipo de relación: {{ match.typeRel }}</h6>
+    <hr />
+
+    <h6>Deporte</h6>
+    <meter max="100" value="{{ match.sport }}"></meter>
+    <h6>Arte</h6>
+    <meter max="100" value="{{ match.art }}"></meter>
+    <h6>Política</h6>
+    <meter max="100" value="{{ match.politic }}"></meter>
+    <hr />
+
+    <h6>Hijos: {{ match.haveSons }}</h6>
+    <hr />
+
+    <h6>Quiere hijos: {{ match.wantSons }}</h6>
+    <hr />
+
+    <h6>Conexión: {{ match.conected }}</h6>
+    <hr />
+
+    <h6>Descripción</h6>
+    <p>{{ match.description }}</p>
+
+    <div class="modal-footer">
+        <button type="button" ngbAutofocus class="btn btn-success" (click)="closeModal()">OK</button>
+        <button type="button" class="btn btn-success" (click)="sendMessage()">Mensaje</button>
+        <button type="button" class="btn btn-danger"(click)="blockUser()">Bloquear</button>
+    </div>
+
+  </div>
+</div>

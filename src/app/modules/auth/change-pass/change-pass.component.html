@@ -1,0 +1,49 @@
+<div class="container-form">
+  <div class="abs-center">
+
+    <form [formGroup]="changePass" (ngSubmit)="onSubmit()" class="form">
+
+      <h1 class="form-title p-3">Cambiar contraseña</h1>
+
+      <div class="form-group p-3">
+        <input class="form-control" type="password" formControlName="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password actual"/>
+        <div *ngIf="submitted && formulario['password'].errors">
+          <div class="container-error">
+            <div class="inline-error" *ngIf="formulario['password'].errors['required']">El campo no puede estar vacío</div>
+            <div class="inline-error" *ngIf="formulario['password'].errors['pattern']">Debe tener al menos un dígito, una minúscula, una mayúscula y tener como mínimo 8 caracteres</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group p-3">
+        <input class="form-control" type="password" formControlName="passone" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Nueva contraseña"/>
+        <div *ngIf="submitted && formulario['passone'].errors">
+          <div class="container-error">
+            <div class="inline-error" *ngIf="formulario['passone'].errors['required']">El campo no puede estar vacío</div>
+            <div class="inline-error" *ngIf="formulario['passone'].errors['pattern']">Debe tener al menos un dígito, una minúscula, una mayúscula y tener como mínimo 8 caracteres</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group p-3">
+        <input class="form-control" type="password" formControlName="passtwo" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Nueva contraseña"/>
+        <div *ngIf="submitted && formulario['passtwo'].errors">
+          <div class="container-error">
+            <div class="inline-error" *ngIf="formulario['passtwo'].errors['required']">El campo no puede estar vacío</div>
+            <div class="inline-error" *ngIf="formulario['passtwo'].errors['pattern']">Debe tener al menos un dígito, una minúscula, una mayúscula y tener como mínimo 8 caracteres</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="p-3">
+        <input class="btn btn-primary btn-enviar" type="submit" value="Enviar" />
+        <input class="btn btn-warning btn-remind" type="button" value="Volver" (click)="volver()"/>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
