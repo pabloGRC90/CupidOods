@@ -40,8 +40,8 @@
     <hr />
 
     <div style="position:relative">
-      <div *ngIf="user.admin"><h6>Activo:</h6><div class="btn-true"></div></div>
-      <div *ngIf="!user.admin"><h6>Activo:</h6><div class="btn-false"></div></div>
+      <div *ngIf="user.admin"><h6>Admin:</h6><div class="btn-true"></div></div>
+      <div *ngIf="!user.admin"><h6>Admin:</h6><div class="btn-false"></div></div>
     </div>
     <div class="botones-switch">
       <button type="button" class="btn btn-success"(click)="addAdminRol()">Activar</button>
